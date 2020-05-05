@@ -1,7 +1,7 @@
 <template>
   <div class="loader">
     <div class="loader__item"></div>
-    <p class="loader__text">Загрузка...</p>
+    <p class="loader__text">Loading...</p>
   </div>
 </template>
 
