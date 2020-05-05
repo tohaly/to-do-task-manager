@@ -32,4 +32,18 @@ export default {
   background-color: #f8f5c1;
   color: #918989;
 }
+
+@media screen and (max-width: 650px) {
+  .button {
+    font-size: 20px;
+    padding: 8px 16px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .button {
+    font-size: 20px;
+    padding: 8px 8px;
+  }
+}
 </style>

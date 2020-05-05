@@ -16,7 +16,7 @@ export default {
   data() {
     return {};
   },
-  components: { Header }
+  components: { Header },
 };
 </script>
 
@@ -35,5 +35,17 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 104px;
+}
+
+@media screen and (max-width: 1024px) {
+  .page {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .page {
+    padding: 0 16px;
+  }
 }
 </style>

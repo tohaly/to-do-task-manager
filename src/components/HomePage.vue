@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="home-page">
     <CardList :openConfirmPopup="openConfirmPopup" />
     <ConfirmPopup :popup="popup" :confirm="confirmRemoveCard" />
   </div>
@@ -16,10 +16,10 @@ import { mapActions } from "vuex";
 // import SERVER_ERROR from "../constants/constants";
 
 export default {
-  name: "Home",
+  name: "HomePage",
   components: {
     CardList,
-    ConfirmPopup
+    ConfirmPopup,
   },
   data() {
     return {
@@ -27,8 +27,8 @@ export default {
         isActive: false,
         cardId: "",
         isLoad: false,
-        message: DELETE_MESSAGE
-      }
+        message: DELETE_MESSAGE,
+      },
     };
   },
   methods: {
@@ -43,19 +43,19 @@ export default {
         .then(() => {
           this.popup.isActive = false;
         })
-        .catch(err => {
+        .catch((err) => {
           console.err(err);
         })
         .finally(() => {
           this.popup.isLoad = false;
         });
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style>
-.main {
+.home-page {
   box-sizing: border-box;
   margin: 0 auto;
 }

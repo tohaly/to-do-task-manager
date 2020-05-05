@@ -57,9 +57,13 @@ export default {
 
 .card__title {
   font-size: 32px;
+  width: 100%;
   color: #fff;
   margin: 0;
-  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 6px;
 }
 
 .card__delete-button {
@@ -67,6 +71,7 @@ export default {
   height: 40px;
   position: relative;
   cursor: pointer;
+  align-self: center;
 }
 
 .card__delete-button::after {
@@ -107,6 +112,9 @@ export default {
   list-style-type: none;
   border-radius: 8px;
   padding: 4px 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .card__task_marked {
@@ -123,14 +131,42 @@ export default {
   background-color: transparent;
   color: #918989;
   border: 3px solid #918989;
+  opacity: 0.8;
+  margin-top: auto;
 }
 
-.card__many-cards {
-  font-size: 20px;
-  margin: 8px 0;
-  padding: 0;
-  line-height: 1;
-  text-align: right;
-  font-weight: bold;
+.card__button:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  .card {
+    width: 224px;
+  }
+
+  .card__title {
+    font-size: 20px;
+  }
+
+  .card__task {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .card__delete-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .card__button {
+    font-size: 20px;
+    padding: 6px 8px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .card {
+    width: 288px;
+  }
 }
 </style>

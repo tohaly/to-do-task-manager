@@ -1,7 +1,10 @@
 <template>
   <div class="state-panel">
     <button
-      :class="[{'state-panel__button_disabled' : !states.isEdited},'state-panel__button']"
+      :class="[
+        { 'state-panel__button_disabled': !states.isEdited },
+        'state-panel__button',
+      ]"
       :disabled="!states.isEdited"
       @click="stateEvents.toPreviousState()"
     >
@@ -14,7 +17,10 @@
       </span>
     </button>
     <button
-      :class="[{'state-panel__button_disabled' : states.isEdited || !states.future},'state-panel__button']"
+      :class="[
+        { 'state-panel__button_disabled': states.isEdited || !states.future },
+        'state-panel__button',
+      ]"
       :disabled="states.isEdited || !states.future"
       @click="stateEvents.toFutureState()"
     >
@@ -34,22 +40,22 @@ export default {
   name: "StatePanel",
   props: {
     stateEvents: Object,
-    states: Object
+    states: Object,
   },
   methods: {
     handlePreviusClick() {
       this.stateEvents.toPreviousState();
-    }
-  }
+    },
+  },
 };
 </script>
 <style>
 .state-panel {
-  max-width: 132px;
+  width: 112px;
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: 22px;
 }
 
 .state-panel__button {

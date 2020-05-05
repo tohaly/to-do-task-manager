@@ -32,11 +32,11 @@ export default {
   name: "CardList",
   components: { Card, Loader },
   props: {
-    openConfirmPopup: Function
+    openConfirmPopup: Function,
   },
   data() {
     return {
-      isLoad: true
+      isLoad: true,
     };
   },
   methods: mapActions(["getCards"]),
@@ -47,7 +47,7 @@ export default {
         this.isLoad = false;
       });
     }
-  }
+  },
 };
 </script>
 
@@ -58,6 +58,7 @@ export default {
   grid-column-gap: 16px;
   grid-row-gap: 32px;
   justify-content: center;
+  padding: 16px 0;
 }
 
 .main__add-button {
@@ -78,7 +79,26 @@ export default {
 
 .card-list__add-icon {
   fill: #f1e9e9;
-  widows: 50px;
   margin: auto;
+}
+@media screen and (max-width: 1024px) {
+  .card-list__container {
+    grid-template-columns: repeat(auto-fill, 224px);
+  }
+
+  .main__add-button {
+    min-height: 224px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .card-list__container {
+    grid-template-columns: repeat(auto-fill, 288px);
+  }
+
+  .main__add-button {
+    min-height: auto;
+    padding: 16px;
+  }
 }
 </style>

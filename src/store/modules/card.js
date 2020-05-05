@@ -78,12 +78,7 @@ export default {
       Vue.delete(state.cardList, id);
     },
     updateCard(state, { id, card }) {
-      console.log({ id, card });
       state.cardList[id] = card;
-    },
-    checked(state, { id, index }) {
-      const path = state.cardList[id].list[index];
-      path.isChecked = !path.isChecked;
     },
   },
   getters: {

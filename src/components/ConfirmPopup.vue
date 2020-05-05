@@ -40,6 +40,7 @@ export default {
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
   animation: loader 0.4s infinite;
+  z-index: 4;
 }
 
 .popup_is-active {
