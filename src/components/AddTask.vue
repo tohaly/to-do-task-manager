@@ -24,8 +24,6 @@
 <script>
 import Button from "./Button";
 
-import { MINIMUM_CHARACTERS } from "../constants/constants";
-
 export default {
   name: "AddTask",
   components: {
@@ -47,14 +45,7 @@ export default {
       this.isButtonDisabled = true;
     },
     validate() {
-      if (
-        typeof this.textHolder === "string" &&
-        this.textHolder.length < MINIMUM_CHARACTERS
-      ) {
-        this.isButtonDisabled = true;
-      } else {
-        this.isButtonDisabled = false;
-      }
+      this.$helpers.simpleValidate(this);
     },
     keyAddTaskHandler() {
       if (!this.isButtonDisabled) {

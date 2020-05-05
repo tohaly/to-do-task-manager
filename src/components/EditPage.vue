@@ -1,7 +1,7 @@
 <template>
   <div class="edit-page">
     <div class="edit-page__content" v-if="!isLoad">
-      <Title :title="card.title" :saveTitle="saveTitle" />
+      <Title :text="card.title" :saveTitle="saveTitle" />
       <div v-if="card.list.length" class="edit-page__tasks">
         <Task
           v-for="(task, index) in card.list"

@@ -1,14 +1,14 @@
 <template>
   <div class="task-title__wrapper">
-    <h1 v-if="title && !isEditing" class="task-title__text">{{ title }}</h1>
+    <h1 v-if="text && !isEditing" class="task-title__text">{{ text }}</h1>
     <input
-      v-if="!title || isEditing"
-      v-model="titleHolder"
+      v-if="!text || isEditing"
+      v-model="textHolder"
       v-on:keyup.enter="keyEditTitleHandler"
       type="text"
       class="task-title__input"
       placeholder="Enter a title"
-      @input="validate()"
+      @input="validate"
       minlength="2"
       maxlength="25"
     />
@@ -27,44 +27,38 @@
 <script>
 import Button from "./Button";
 
-import { MINIMUM_CHARACTERS } from "../constants/constants";
+// import { MINIMUM_CHARACTERS } from "../constants/constants";
 
 export default {
   name: "Title",
   props: {
-    title: String,
+    text: String,
     saveTitle: Function,
   },
   components: { Button },
   data() {
     return {
-      titleHolder: this.title,
-      isEditing: this.title ? false : true,
-      buttinName: !this.title ? "save" : "edit",
-      isButtonDisabled: this.title ? false : true,
+      textHolder: this.text,
+      isEditing: this.text ? false : true,
+      buttinName: !this.text ? "save" : "edit",
+      isButtonDisabled: this.text ? false : true,
+      ctx: this,
     };
   },
   methods: {
     saveChangedTitle() {
       this.buttinName = "edit";
       this.isEditing = false;
-      this.saveTitle(this.titleHolder);
-      this.titleHolder = null;
+      this.saveTitle(this.textHolder);
+      this.textHolder = null;
     },
     showEditField() {
       this.buttinName = "save";
       this.isEditing = true;
-      this.titleHolder = this.title;
+      this.textHolder = this.text;
     },
     validate() {
-      if (
-        typeof this.titleHolder === "string" &&
-        this.titleHolder.length < MINIMUM_CHARACTERS
-      ) {
-        this.isButtonDisabled = true;
-      } else {
-        this.isButtonDisabled = false;
-      }
+      this.$helpers.simpleValidate(this);
     },
     keyEditTitleHandler() {
       if (!this.isButtonDisabled) {

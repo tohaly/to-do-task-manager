@@ -13,7 +13,7 @@
       class="task__input"
       placeholder="Enter a task"
       v-if="isEditing"
-      v-model="textHandler"
+      v-model="textHolder"
       v-on:keyup.enter="keyEditTaskHandler"
       @input="validate()"
       minlength="2"
@@ -31,8 +31,6 @@
 
 <script>
 import Button from "./Button";
-
-import { MINIMUM_CHARACTERS } from "../constants/constants";
 
 export default {
   name: "Task",
@@ -52,29 +50,22 @@ export default {
       isEditing: false,
       buttonName: "edit",
       isButtonDisabled: false,
-      textHandler: this.text,
+      textHolder: this.text,
     };
   },
   methods: {
     showEditField() {
       this.isEditing = true;
       this.buttonName = "save";
-      this.textHandler = this.text;
+      this.textHolder = this.text;
     },
     saveChangedTask() {
       this.isEditing = false;
       this.buttonName = "edit";
-      this.saveTask(this.index, this.textHandler);
+      this.saveTask(this.index, this.textHolder);
     },
     validate() {
-      if (
-        typeof this.textHandler === "string" &&
-        this.textHandler.length < MINIMUM_CHARACTERS
-      ) {
-        this.isButtonDisabled = true;
-      } else {
-        this.isButtonDisabled = false;
-      }
+      this.$helpers.simpleValidate(this);
     },
     keyEditTaskHandler() {
       if (!this.isButtonDisabled) {
