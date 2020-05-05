@@ -6,10 +6,10 @@
 </template>
 
 <script>
-import "./vendor/fonts.css";
-import "./vendor/normalize.css";
+import "../vendor/fonts.css";
+import "../vendor/normalize.css";
 
-import Header from "./components/Header";
+import Header from "./Header";
 
 export default {
   name: "App",
