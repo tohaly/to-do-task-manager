@@ -94,6 +94,8 @@ export default {
 }
 
 .task-title__input {
+  appearance: none;
+  border-radius: 0;
   display: inline-block;
   box-sizing: border-box;
   width: 100%;
@@ -102,6 +104,7 @@ export default {
   padding: 8px 0;
   background-color: transparent;
   border-bottom: 2px solid #f8f5c1;
+  margin-right: 8px;
 }
 
 .task-title__input:focus {

@@ -159,29 +159,39 @@ export default {
 }
 
 .task__input {
+  appearance: none;
+  border-radius: 0;
   border: none;
   font-size: 30px;
   letter-spacing: 5px;
   flex-grow: 1;
   border: 1px solid #fff;
-  margin-right: 16px;
+  margin-right: 8px;
   border-bottom: 1px solid #000;
 }
 
 .task__input:focus {
   outline: none;
   border-bottom: 2px solid #000;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .task__button {
   margin-right: 16px;
-  background-color: #ccc;
+  background-color: transparent;
   padding: 4px 8px;
   border: none;
+  transition: color 0.4s;
+}
+
+.task__button:hover {
+  transform: none;
+  color: #373f41;
 }
 
 .task__button_disabled {
-  opacity: 0.4;
+  opacity: 0.2;
 }
 
 .task__button_disabled:hover {

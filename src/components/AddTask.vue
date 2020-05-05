@@ -65,6 +65,8 @@ export default {
 }
 
 .add-task__input {
+  appearance: none;
+  border-radius: 0;
   box-sizing: border-box;
   width: 100%;
   border: none;
@@ -72,6 +74,7 @@ export default {
   padding: 8px 16px;
   background-color: transparent;
   border-bottom: 2px solid #f8f5c1;
+  margin-right: 8px;
 }
 
 .add-task__input:focus {

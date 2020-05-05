@@ -9,9 +9,13 @@
         :class="[{ card__task_marked: task.isChecked }, 'card__task']"
         v-for="(task, index) in card.list.slice(0, 4)"
         :key="index"
-      >{{ task.text }}</li>
+      >
+        {{ task.text }}
+      </li>
     </ul>
-    <router-link class="card__button" :to="`edit/${id}`" tag="button">edit</router-link>
+    <router-link class="card__button" :to="`edit/${id}`" tag="button"
+      >edit</router-link
+    >
   </div>
 </template>
 
@@ -24,14 +28,14 @@ export default {
   props: {
     card: Object,
     id: String,
-    openConfirmPopup: Function
+    openConfirmPopup: Function,
   },
   methods: {
     ...mapActions(["removeCard"]),
     remove() {
       this.openConfirmPopup(this.id);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -53,6 +57,8 @@ export default {
   background-color: #263238;
   padding: 16px;
   display: flex;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 .card__title {
