@@ -91,6 +91,7 @@ export default {
   display: flex;
   align-items: center;
   position: relative;
+  cursor: pointer;
 }
 
 .task__item {
@@ -114,6 +115,7 @@ export default {
   margin: auto 6px auto 0;
   border-radius: 50%;
   border: 3px solid #818586;
+  margin-right: 16px;
 }
 
 .task__checkbox:checked + .task__custom-checkbox {
