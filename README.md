@@ -1,33 +1,54 @@
-# task-meneger
+# to do Task
+version 0.0.1
+
+## Опсиание проекта
+
+Личный проект. Для того что бы попробовать `VUE`, `VUE routing`, `VUEX`.
+
+## Технологии
+- Верстка `HTML`, `CSS`, `БЭМ`;
+- Инфраструктура: `vue-cli`;
+- В качестве сервера испольуется `firebase`.
+
+## Что умеет приложение
+- Создание, удаление, редактирование toDo листов;
+- Возможность создание, удаление, редактирование, отметить выполненым задачу;
+- Возможность отмены редактирования, и возвратить отмененного изменения;
+- Защита от случайного выхода без сохранения.
 
 ## Ссылка на проект
-
 https://tohaly.github.io/to-do-task-manager/
 
-## Project setup
+## Загрузить недостающие пакеты
 
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Запуск dev сервера
 
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Сборка проекта
 
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### Литнинг и запуск исправлений
 
 ```
 npm run lint
 ```
+### Деплой проекта на gh-pages
+1. Собрать проект:
+```
+npm run build
+```
+2. Задеплоить проект:
+```
+npm run deploy
+```
 
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
